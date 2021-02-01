@@ -1,0 +1,5 @@
+// { "presets": ["env", "@babel/react", "@babel/typescript", ["@babel/env", { "modules": false }]] }
+{
+  "presets": ["env", "@babel/preset-env", "es2015", "@babel/react", "@babel/typescript", ["@babel/env", { "modules": false }]],
+  "plugins": [["angularjs-annotate", { "explicitOnly" : true}]]
+}

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "types": [
+      "react", 
+      "angular"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "localhost":["/"],
+      "*.ts": ["*"]
+    }
+  },
+  "exclude": [
+    "./node_modules",
+    "wwwroot",
+    "temp",
+    "./webpack.config.js"
+  ]
+}
