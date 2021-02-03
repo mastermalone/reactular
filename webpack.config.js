@@ -20,14 +20,14 @@ module.exports = {
         test: /\.ts$|.tsx?$/,
         loader: 'ts-loader',
       },
-      // {
-      //   test: /\.html/,
-      //   loader: 'raw-loader',
-      // },
+      {
+        test: /\.html/,
+        loader: 'raw-loader',
+      },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.html'],
   },
   plugins: [
     // Array of plugins to apply to build chunk
@@ -38,7 +38,11 @@ module.exports = {
   ],
   devServer: {
     // configuration for webpack-dev-server
+    inline: true,
+    hot: true,
     contentBase: './src', //source of static assets
+    watchContentBase: true,
+    // publicPath: './src/public/',
     port: 7700, // port to run dev-server
   },
 };

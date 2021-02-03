@@ -11,6 +11,7 @@ export interface CardInterface {
 const Card = withHooks(
   CardTemplate,
   ({ author, text, title, image }: CardInterface) => {
+    console.log('author', author);
     return {
       author,
       text,

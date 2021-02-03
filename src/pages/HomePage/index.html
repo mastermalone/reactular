@@ -1,1 +1,5 @@
-<div>The home page</div>
+<div ng-controller="homePageController as hpCtrl">
+  <h4>{{hpCtrl.heading}}</h4>
+  <card title="hpCtrl.heading"></card>
+  <button ng-click="hpCtrl.onClick()">Update</button>
+</div>

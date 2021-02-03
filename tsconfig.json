@@ -3,6 +3,7 @@
     "outDir": "./dist/",
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
+    "removeComments": false,
     "sourceMap": true,
     "module": "es6",
     "target": "es5",
@@ -25,6 +26,7 @@
     "./node_modules",
     "wwwroot",
     "temp",
-    "./webpack.config.js"
+    "./webpack.config.js",
+    "*.html"
   ]
 }
