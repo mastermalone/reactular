@@ -3,6 +3,7 @@ import AppRoutes from './app.routes';
 import AppConfig from './app.config';
 import AppInit from './app.init';
 import TestModule from '../common/TestModule/testModule';
+import HomePageController from '../pages/HomePage/index';
 
 class TestClass {
   constructor() {
@@ -13,6 +14,7 @@ class TestClass {
     AppRoutes;
     AppConfig;
     AppInit;
+    HomePageController;
   }
 }
 
