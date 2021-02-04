@@ -1,5 +1,6 @@
 import React from 'react';
 import { CardInterface } from './card';
+import styles from './card.module.scss';
 
 const CardTemplate = ({
   author,
@@ -7,11 +8,11 @@ const CardTemplate = ({
   title,
   image,
 }: CardInterface): JSX.Element => (
-  <div>
+  <div className={styles['card']}>
     <img src={image} />
-    <div>
-      <h4>{title}</h4>
-      <h5>{author}</h5>
+    <div className={styles['card-content']}>
+      <h4 className={styles.title}>{title}</h4>
+      <h5 className={styles.author}>{author}</h5>
       <p>{text}</p>
     </div>
   </div>

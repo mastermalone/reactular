@@ -1,5 +1,37 @@
-<div ng-controller="homePageController as hpCtrl">
+<!-- This is the Hompage which uses a directive that
+renders the ReactDOM for the Card component.  Data from the
+controller is passed into the React Component via the directive in
+the index.tsx file.  Here, the directive data attribute is passed the 
+value of the card data arra to check for changes in the data which
+triggers an update to the view via scope.$watch()-->
+<div
+  class="{{hpCtrl.styles['home-page']}}"
+  ng-controller="homePageController as hpCtrl"
+>
   <h4>{{hpCtrl.heading}}</h4>
-  <card title="hpCtrl.heading"></card>
-  <button ng-click="hpCtrl.onClick()">Update</button>
+  <div class="{{hpCtrl.styles['card-container']}}">
+    <card data="{{hpCtrl.cardData}}"></card>
+  </div>
+  {{form}}
+  <form id="card-form">
+    <input
+      type="text"
+      name="title"
+      placeholder="Enter a title"
+      ng-model="form.title"
+    />
+    <input
+      type="text"
+      name="author"
+      placeholder="Enter author name"
+      ng-model="form.author"
+    />
+    <input
+      type="text"
+      name="text"
+      placeholder="Enter some content"
+      ng-model="form.textContent"
+    />
+    <button ng-click="hpCtrl.onClick(form)">Add Card</button>
+  </form>
 </div>

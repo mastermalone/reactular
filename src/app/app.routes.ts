@@ -15,7 +15,7 @@ const AppRoutes: AppRoutesInterface = {
       name: 'home',
       templateUrl: '/pages/HomePage/index.html',
       url: '/home',
-      controller: 'homePageController',
+      controller: 'homePageController as hpCtrl',
     },
   ],
 };

@@ -17,13 +17,20 @@ interface HomePageServiceInterface {
   content1: string;
   content2: string;
   cardData: CardDataTypeArray;
-  onClick: () => void;
+  onClick: ({ author, textContent, title }: CardDataType) => void;
 }
 
 interface HomePageFactoryInterface {
   HomePageServiceModule: () => HomePageServiceInterface;
 }
 
+/**
+ * @since 1.0.0
+ * @module HomePageServiceFactory
+ * @description Provides vanilla JavaScript driven functionality
+ * to an Angular service, (Actually a factory)
+ * @returns {Function} HomePageServiceModule
+ */
 const HomePageServiceFactory = (): HomePageFactoryInterface => {
   const HomePageServiceModule = (): HomePageServiceInterface => {
     const heading = 'Welcome to the home page';
@@ -35,26 +42,34 @@ const HomePageServiceFactory = (): HomePageFactoryInterface => {
     const cardData: CardDataTypeArray = [
       {
         author: 'Author 1',
-        image: 'http://placekitten.com/200/300',
+        image: 'http://placekitten.com/250/100',
         textContent: 'The best card ever',
         title: 'Card Title 1',
       },
       {
         author: 'Author 2',
-        image: 'http://placekitten.com/200/300',
+        image: 'http://placekitten.com/250/100',
         textContent: 'The best card ever',
         title: 'Card Title 2',
       },
       {
         author: 'Author 3',
-        image: 'http://placekitten.com/200/300',
+        image: 'http://placekitten.com/250/100',
         textContent: 'The best card ever',
         title: 'Card Title 3',
       },
     ];
 
-    const onClick = () => {
-      console.log('Clicking');
+    const onClick = (formData: CardDataType) => {
+      const ObjectHasData = Object.keys(formData).length > 0;
+      cardData.push({
+        author: formData.author,
+        image: 'http://placekitten.com/250/100',
+        textContent: formData.textContent,
+        title: formData.title,
+      });
+
+      console.log('the new data', cardData);
     };
 
     return {
