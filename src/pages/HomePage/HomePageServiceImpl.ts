@@ -14,8 +14,6 @@ type CardDataTypeArray = {
 
 interface HomePageServiceInterface {
   heading: string;
-  content1: string;
-  content2: string;
   cardData: CardDataTypeArray;
   onClick: ({ author, textContent, title }: CardDataType) => void;
 }
@@ -33,12 +31,10 @@ interface HomePageFactoryInterface {
  */
 const HomePageServiceFactory = (): HomePageFactoryInterface => {
   const HomePageServiceModule = (): HomePageServiceInterface => {
+    let onErrorMessage = '';
     const heading = 'Welcome to the home page';
-    const content1 =
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ";
-    const content2 =
-      'here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour';
 
+    //Some initial mock data
     const cardData: CardDataTypeArray = [
       {
         author: 'Author 1',
@@ -61,21 +57,24 @@ const HomePageServiceFactory = (): HomePageFactoryInterface => {
     ];
 
     const onClick = (formData: CardDataType) => {
-      const ObjectHasData = Object.keys(formData).length > 0;
-      cardData.push({
-        author: formData.author,
-        image: 'http://placekitten.com/250/100',
-        textContent: formData.textContent,
-        title: formData.title,
-      });
+      const ObjectHasData =
+        formData.title.length &&
+        formData.author.length &&
+        formData.textContent.length;
 
-      console.log('the new data', cardData);
+      onErrorMessage = '';
+
+      !!ObjectHasData &&
+        cardData.push({
+          author: formData.author,
+          image: 'http://placekitten.com/250/100',
+          textContent: formData.textContent,
+          title: formData.title,
+        });
     };
 
     return {
       cardData,
-      content1,
-      content2,
       heading,
       onClick,
     };

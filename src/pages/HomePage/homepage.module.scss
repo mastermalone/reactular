@@ -1,13 +1,10 @@
 .home-page {
   margin: 30px auto;
   width: 900px;
+  font-family: Arial, Helvetica, sans-serif;
 
   .card-container > card > div {
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    // align-items: flex-start;
-    // justify-content: space-between;
-    // flex-direction: row;
-    // flex-wrap: wrap;
   }
 }
