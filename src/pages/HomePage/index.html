@@ -10,7 +10,7 @@ triggers an update to the view via scope.$watch()-->
 >
   <h4>{{hpCtrl.heading}}</h4>
   <div class="{{hpCtrl.styles['card-container']}}">
-    <card data="{{hpCtrl.cardData}}" errorMsg="{{errorMsg.msg}}" />
+    <card data="{{hpCtrl.cardData}}" />
   </div>
   {{form}}
   <form id="card-form">
@@ -32,7 +32,7 @@ triggers an update to the view via scope.$watch()-->
       placeholder="Enter some content"
       ng-model="form.textContent"
     />
-    <button ng-click="hpCtrl.onClick(form, errorMsg.msg)">Add Card</button>
+    <button ng-click="hpCtrl.onClick(form)">Add Card</button>
   </form>
   <div>{{errorMsg.msg}}</div>
 </div>
