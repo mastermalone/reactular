@@ -68,7 +68,7 @@ App.directive('card', [
 
 /**
  * @description
- * This controller is very basica and lets the homePageService
+ * This controller is very basic and lets the homePageService
  * do all the talking with regards to data updates and any events
  * that we might want to listen to
  */
