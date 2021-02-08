@@ -7,4 +7,27 @@
     display: grid;
     grid-template-columns: 33% 33% 33%;
   }
+
+  form {
+    margin: 20px 0px;
+
+    input,
+    button {
+      padding: 10px 15px;
+      border: solid 1px rgb(2, 137, 248);
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    button {
+      background: rgb(2, 137, 248);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: rgb(55, 162, 250);
+    }
+  }
 }
